@@ -12,6 +12,7 @@
 	<a href="index.jsp">Return Home</a><br>
 	<c:forEach var="movie" items="${movieList}">
 		<h3>${movie.title}</h3>
+		<img src="${movie.moviePosterURL}">
 		<h4>Genre: ${movie.genre}</h4>
 		<h4>Year Released: ${movie.yearReleased}</h4>
 		<h4>Leading Actor: ${movie.leadingActor}</h4>

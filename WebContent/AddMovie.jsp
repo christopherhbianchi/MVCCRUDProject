@@ -11,7 +11,8 @@
 	<h3>Provide Movie Details to Add:</h3>
 	<form action="AddMovie.do" method="POST">
 		Title:
-		<input type="text" name="title"><br> <!-- Anything in the submit even? --> 
+		<input type="text" name="title"> 
+		<br>
 		Genre:
 		<select name="genre">
 				<option value="Action">Action</option>
@@ -32,8 +33,13 @@
 				<option value="2013">2013</option>
 				<option value="2014">2014</option>
 		</select>
+		<br>
 		Leading Actor: 
-		<input type="text" name="leadingActor"/><br/>
+		<input type="text" name="leadingActor"/>
+		<br>
+		Movie Poster URL:
+		<input type="text" name="moviePosterURL">
+		<br>
 		<input type="submit" value="Add Movie"/>
 	</form>
 	

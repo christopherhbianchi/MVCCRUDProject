@@ -110,9 +110,10 @@ public class MovieController {
 //	when do we do a request param versus not? I see we only need to pass a state in here
 	@RequestMapping(path="AddMovie.do", method=RequestMethod.POST)
 	public ModelAndView addMovie(@RequestParam("title") String title, @RequestParam("genre") String genre
-			, @RequestParam("yearReleased") String yearReleased, @RequestParam("leadingActor") String leadingActor) { //here is where we try to get values from our JSP. So it takes all the parameters from the single form, and then builds a Movie with it, so it's okay it takes an entire "Movie"
+			, @RequestParam("yearReleased") String yearReleased, @RequestParam("leadingActor") String leadingActor
+			, @RequestParam("moviePosterURL") String moviePosterURL) { //here is where we try to get values from our JSP. So it takes all the parameters from the single form, and then builds a Movie with it, so it's okay it takes an entire "Movie"
 		ModelAndView mv = new ModelAndView();
-		dao.addMovie(title, genre, yearReleased, leadingActor);
+		dao.addMovie(title, genre, yearReleased, leadingActor, moviePosterURL);
 		mv.setViewName("ActionSuccessful.jsp");
 //		mv.addObject("movie", movie);
 		return mv;
@@ -130,9 +131,10 @@ public class MovieController {
 	
 	@RequestMapping(path="UpdateMovie.do", method=RequestMethod.POST)
 	public ModelAndView updateMovie(@RequestParam("title") String title, @RequestParam("genre") String genre
-	, @RequestParam("yearReleased") String yearReleased, @RequestParam("leadingActor") String leadingActor) {
+	, @RequestParam("yearReleased") String yearReleased, @RequestParam("leadingActor") String leadingActor
+	, @RequestParam("moviePosterURL") String moviePosterURL) {
 		ModelAndView mv = new ModelAndView();
-		dao.updateMovie(title, genre, yearReleased, leadingActor);
+		dao.updateMovie(title, genre, yearReleased, leadingActor, moviePosterURL);
 		mv.setViewName("ActionSuccessful.jsp");
 		//don't need addObject for these because the movies movie list is a field and "movieList" is a session attribute.
 				return mv;

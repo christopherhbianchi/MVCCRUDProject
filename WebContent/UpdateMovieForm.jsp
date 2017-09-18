@@ -18,6 +18,7 @@
 				<option value="${movie.title}">${movie.title}</option>
 			</c:forEach>
 		</select>
+		<br>
 		Genre:
 		<select name="genre">
 				<option value="Action">Action</option>
@@ -38,8 +39,14 @@
 				<option value="2013">2013</option>
 				<option value="2014">2014</option>
 		</select>
+		<br>
 		Leading Actor: 
-		<input type="text" name="leadingActor"/><br/>
+		<input type="text" name="leadingActor"/>
+		<br>
+		Movie Poster URL:
+		<input type="text" name="moviePosterURL">
+		<br>
+		
 		<input type="submit" value="Update Movie"/>
 	</form>
 	

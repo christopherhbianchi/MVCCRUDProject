@@ -11,7 +11,7 @@
 <body>
 	<h1>Explore My Top Movie List:</h1>
 	<br>
-	<img src="http://www.talon.news/wp-content/uploads/2017/04/15HOLLYWOOD-superJumbo-v2.jpg" height="500" width="900">
+	<img class="mainImage" src="http://www.talon.news/wp-content/uploads/2017/04/15HOLLYWOOD-superJumbo-v2.jpg">
 	<br>
 	<br>
 	<h3>Get Movie By Name</h3>

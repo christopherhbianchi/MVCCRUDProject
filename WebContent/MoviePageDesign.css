@@ -25,14 +25,20 @@ a {
 	font-family:Garamond;
 }
 
-.header{
+.mainImage{ /* so this would allow my background image to stay the same */
 	background-image:url("http://www.talon.news/wp-content/uploads/2017/04/15HOLLYWOOD-superJumbo-v2.jpg");
 	background-repeat:no-repeat;
 	background-size:fit;
+	height:500px; 
+	width:900px;
 }
 
 form {
 	color:#ffcc00;
 	text-shadow:2px 2px 2px black;
 	font-family:Garamond;
+}
+
+img {
+	width: 200px;
 }

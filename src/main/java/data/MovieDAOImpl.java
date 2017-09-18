@@ -43,8 +43,9 @@ public class MovieDAOImpl implements MovieDAO{
 				  String genre = moviePieces[1]; 
 				  String yearReleased = moviePieces[2]; 
 				  String leadingActor = moviePieces[3];
+				  String moviePosterURL = moviePieces[4];
 				  
-				  movies.add(new Movie(title, genre, yearReleased, leadingActor));
+				  movies.add(new Movie(title, genre, yearReleased, leadingActor, moviePosterURL));
 				  System.out.println(movies.get(0));
 			  }
 		  }
@@ -124,8 +125,8 @@ public class MovieDAOImpl implements MovieDAO{
 	
 
 	@Override
-	public void addMovie(String title, String genre, String yearReleased, String leadingActor) {
-		Movie movie = new Movie(title, genre, yearReleased, leadingActor);
+	public void addMovie(String title, String genre, String yearReleased, String leadingActor, String moviePosterURL) {
+		Movie movie = new Movie(title, genre, yearReleased, leadingActor, moviePosterURL);
 		
 		movies.add(movie); //go back to add functionality to check to see it isn't duplicate, been done above now
 	}
@@ -145,7 +146,7 @@ public class MovieDAOImpl implements MovieDAO{
 
 
 	@Override
-	public void updateMovie(String title, String genre, String yearReleased, String leadingActor) {
+	public void updateMovie(String title, String genre, String yearReleased, String leadingActor, String moviePosterURL) {
 		
 		
 		for(int i=0; i< movies.size(); i++) {
@@ -153,7 +154,8 @@ public class MovieDAOImpl implements MovieDAO{
 				
 				movies.get(i).setGenre(genre);
 				movies.get(i).setYearReleased(yearReleased);
-				movies.get(i).setLeadingActor(leadingActor);				
+				movies.get(i).setLeadingActor(leadingActor);	
+				movies.get(i).setMoviePosterURL(moviePosterURL);
 			}
 		}
 	}

@@ -7,10 +7,10 @@ public interface MovieDAO {
 	public List<Movie> getMoviesByGenre(String genre); //these top 2 lines will be our "Reads"
 	public List<Movie> getMovies(); //getter for movie list
 	public List<Movie> getMoviesByYear(String yearReleased); 
-	public void addMovie(String title, String genre, String yearReleased, String leadingActor);
+	public void addMovie(String title, String genre, String yearReleased, String leadingActor, String moviePosterURL);
 	public void addMovie(Movie m);
 	public void removeMovie(String title); 
-	public void updateMovie(String title, String genre, String yearReleased, String leadingActor);
+	public void updateMovie(String title, String genre, String yearReleased, String leadingActor, String moviePosterURL);
 	
 	
 	

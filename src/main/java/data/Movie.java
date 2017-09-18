@@ -5,6 +5,7 @@ public class Movie {
 	private String genre;
 	private String yearReleased;
 	private String leadingActor;
+	private String moviePosterURL;
 //	private String summary;
 //  private String moviePoster; --> we could put the image url as a string, add it as a last field to the txt file, and then use an EL getter to load that up when you select it.
 	
@@ -12,12 +13,13 @@ public class Movie {
 		
 	}
 	
-	public Movie(String title, String genre, String yearReleased, String leadingActor) {
+	public Movie(String title, String genre, String yearReleased, String leadingActor, String moviePosterURL) {
 		super();
 		this.title = title;
 		this.genre = genre;
 		this.yearReleased = yearReleased;
 		this.leadingActor = leadingActor;
+		this.moviePosterURL = moviePosterURL;
 	}
 	public String getTitle() {
 		return title;
@@ -44,6 +46,14 @@ public class Movie {
 	public void setLeadingActor(String leadingActor) {
 		this.leadingActor = leadingActor;
 	}
+	public String getMoviePosterURL() {
+		return moviePosterURL;
+	}
+	
+	public void setMoviePosterURL(String moviePosterURL) {
+		this.moviePosterURL = moviePosterURL;
+	}
+	
 	
 	@Override
 	public String toString() {
