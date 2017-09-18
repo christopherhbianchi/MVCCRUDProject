@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Movies</title>
+<link rel="stylesheet" href="MoviePageDesign.css">
+</head>
+<body>
+	<h3>Select Movie:</h3>
+	<select name="movieList">
+		<c:forEach var="movie" items="${movie.movies}"> <!-- i want to be sure it gives a dropdown of movies, and when its clicked it takes them to a page of that movie -->
+			<option value="${movie.title}">${movie.title}</option>
+		</c:forEach>
+	</select>
+	<input type="submit" value="Add Movie" />	
+</body>
+</html>

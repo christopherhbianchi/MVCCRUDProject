@@ -1,0 +1,38 @@
+body {
+	background-color:#cc0000;
+}
+
+h3 {
+	color:#ffcc00;
+	text-shadow:2px 2px 2px black;
+}
+
+h1 {
+	color:#ffcc00;
+	text-shadow:2px 2px 2px black;
+	font-family:Garamond;
+}
+
+h4 {
+	color:#ffcc00;
+	text-shadow:2px 2px 2px black;
+	font-family:Garamond;
+}
+
+a {
+	color:#ffcc00;
+	text-shadow:2px 2px 2px black;
+	font-family:Garamond;
+}
+
+.header{
+	background-image:url("http://www.talon.news/wp-content/uploads/2017/04/15HOLLYWOOD-superJumbo-v2.jpg");
+	background-repeat:no-repeat;
+	background-size:fit;
+}
+
+form {
+	color:#ffcc00;
+	text-shadow:2px 2px 2px black;
+	font-family:Garamond;
+}
