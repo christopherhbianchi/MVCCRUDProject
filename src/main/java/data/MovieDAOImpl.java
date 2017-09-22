@@ -41,7 +41,7 @@ public class MovieDAOImpl implements MovieDAO{
 				  String[] moviePieces = line.split(",");
 				  String title = moviePieces[0]; 
 				  String genre = moviePieces[1]; 
-				  String yearReleased = moviePieces[2]; 
+				  int yearReleased = Integer.parseInt(moviePieces[2]); 
 				  String leadingActor = moviePieces[3];
 				  String moviePosterURL = moviePieces[4];
 				  
@@ -82,11 +82,11 @@ public class MovieDAOImpl implements MovieDAO{
 	}
 
 	@Override
-	public List<Movie> getMoviesByYear(String yearReleased){
+	public List<Movie> getMoviesByYear(int yearReleased){
 		List<Movie> mList = new ArrayList<>();
 		
 		for(Movie m : movies) {
-			if(m.getYearReleased().equals(yearReleased)) { //we'll make it a dropdown search instead of typing out
+			if(m.getYearReleased() == yearReleased) { //we'll make it a dropdown search instead of typing out
 				mList.add(m);
 			}	
 		}
@@ -125,7 +125,7 @@ public class MovieDAOImpl implements MovieDAO{
 	
 
 	@Override
-	public void addMovie(String title, String genre, String yearReleased, String leadingActor, String moviePosterURL) {
+	public void addMovie(String title, String genre, int yearReleased, String leadingActor, String moviePosterURL) {
 		Movie movie = new Movie(title, genre, yearReleased, leadingActor, moviePosterURL);
 		
 		movies.add(movie); //go back to add functionality to check to see it isn't duplicate, been done above now
@@ -146,7 +146,7 @@ public class MovieDAOImpl implements MovieDAO{
 
 
 	@Override
-	public void updateMovie(String title, String genre, String yearReleased, String leadingActor, String moviePosterURL) {
+	public void updateMovie(String title, String genre, int yearReleased, String leadingActor, String moviePosterURL) {
 		
 		
 		for(int i=0; i< movies.size(); i++) {

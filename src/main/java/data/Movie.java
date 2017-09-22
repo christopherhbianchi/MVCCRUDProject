@@ -3,7 +3,7 @@ package data;
 public class Movie {
 	private String title;
 	private String genre;
-	private String yearReleased;
+	private int yearReleased;
 	private String leadingActor;
 	private String moviePosterURL;
 //	private String summary;
@@ -13,7 +13,7 @@ public class Movie {
 		
 	}
 	
-	public Movie(String title, String genre, String yearReleased, String leadingActor, String moviePosterURL) {
+	public Movie(String title, String genre, int yearReleased, String leadingActor, String moviePosterURL) {
 		super();
 		this.title = title;
 		this.genre = genre;
@@ -34,10 +34,10 @@ public class Movie {
 	public void setGenre(String genre) {
 		this.genre = genre;
 	}
-	public String getYearReleased() {
+	public int getYearReleased() {
 		return yearReleased;
 	}
-	public void setYearReleased(String yearReleased) {
+	public void setYearReleased(int yearReleased) {
 		this.yearReleased = yearReleased;
 	}
 	public String getLeadingActor() {

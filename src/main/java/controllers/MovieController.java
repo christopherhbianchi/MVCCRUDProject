@@ -42,7 +42,7 @@ public class MovieController {
 		return mv;
 	}
 	
-	@RequestMapping(path="UpdateMovieScreen.do", method=RequestMethod.GET)
+	@RequestMapping(path="UpdateMovieScreen.do", method=RequestMethod.GET) //this populates the list in the update movie screen
 	public ModelAndView updateMoviePage() {
 		ModelAndView mv = new ModelAndView();
 		mv.addObject("movieList", dao.getMovies());
@@ -70,7 +70,7 @@ public class MovieController {
 	}
 	
 	@RequestMapping(path="MoviesByYear.do", method=RequestMethod.GET)
-	public ModelAndView getMoviesByYear(@RequestParam("year") String y) {
+	public ModelAndView getMoviesByYear(@RequestParam("year") int y) {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("result.jsp");
 		mv.addObject("movieList", dao.getMoviesByYear(y)); //this will be a list, can i do this? Yes. A list is an object itself, plus that list has a toString() so it'll show up fine.
@@ -109,11 +109,10 @@ public class MovieController {
 //	when do we do a post versus a get?
 //	when do we do a request param versus not? I see we only need to pass a state in here
 	@RequestMapping(path="AddMovie.do", method=RequestMethod.POST)
-	public ModelAndView addMovie(@RequestParam("title") String title, @RequestParam("genre") String genre
-			, @RequestParam("yearReleased") String yearReleased, @RequestParam("leadingActor") String leadingActor
-			, @RequestParam("moviePosterURL") String moviePosterURL) { //here is where we try to get values from our JSP. So it takes all the parameters from the single form, and then builds a Movie with it, so it's okay it takes an entire "Movie"
+	public ModelAndView addMovie(Movie m) { //here is where we try to get values from our JSP. So it takes all the parameters from the single form, and then builds a Movie with it, so it's okay it takes an entire "Movie"
 		ModelAndView mv = new ModelAndView();
-		dao.addMovie(title, genre, yearReleased, leadingActor, moviePosterURL);
+
+		dao.addMovie(m);
 		mv.setViewName("ActionSuccessful.jsp");
 //		mv.addObject("movie", movie);
 		return mv;
@@ -131,7 +130,7 @@ public class MovieController {
 	
 	@RequestMapping(path="UpdateMovie.do", method=RequestMethod.POST)
 	public ModelAndView updateMovie(@RequestParam("title") String title, @RequestParam("genre") String genre
-	, @RequestParam("yearReleased") String yearReleased, @RequestParam("leadingActor") String leadingActor
+	, @RequestParam("yearReleased") int yearReleased, @RequestParam("leadingActor") String leadingActor
 	, @RequestParam("moviePosterURL") String moviePosterURL) {
 		ModelAndView mv = new ModelAndView();
 		dao.updateMovie(title, genre, yearReleased, leadingActor, moviePosterURL);
