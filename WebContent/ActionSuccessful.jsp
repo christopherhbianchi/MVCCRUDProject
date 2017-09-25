@@ -10,7 +10,7 @@
 <body>
 <h3>Action Successful</h3>
 <br>
-<a href="index.jsp">Return Home</a>
+<a href="index.do">Return Home</a>
 
 </body>
 </html>

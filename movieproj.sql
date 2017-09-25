@@ -5,15 +5,15 @@ SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 
 -- -----------------------------------------------------
--- Schema mydb
+-- Schema movieapp
 -- -----------------------------------------------------
-DROP SCHEMA IF EXISTS `mydb` ;
+DROP SCHEMA IF EXISTS `movieapp` ;
 
 -- -----------------------------------------------------
--- Schema mydb
+-- Schema movieapp
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8 ;
-USE `mydb` ;
+CREATE SCHEMA IF NOT EXISTS `movieapp` DEFAULT CHARACTER SET utf8 ;
+USE `movieapp` ;
 
 -- -----------------------------------------------------
 -- Table `movie`
@@ -21,7 +21,7 @@ USE `mydb` ;
 DROP TABLE IF EXISTS `movie` ;
 
 CREATE TABLE IF NOT EXISTS `movie` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `title` VARCHAR(45) NOT NULL,
   `genre` VARCHAR(45) NULL,
   `year_released` VARCHAR(45) NULL,
@@ -151,7 +151,7 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 -- Data for table `movie`
 -- -----------------------------------------------------
 START TRANSACTION;
-USE `mydb`;
+USE `movieapp`;
 INSERT INTO `movie` (`id`, `title`, `genre`, `year_released`, `leading_actor`, `movie_poster_url`) VALUES (1, 'Shutter Island', 'Thriller', '2010', NULL, NULL);
 INSERT INTO `movie` (`id`, `title`, `genre`, `year_released`, `leading_actor`, `movie_poster_url`) VALUES (2, 'Inception', 'Thriller', '2010', NULL, NULL);
 INSERT INTO `movie` (`id`, `title`, `genre`, `year_released`, `leading_actor`, `movie_poster_url`) VALUES (3, 'The Imitation Game', 'Drama', '2014', NULL, NULL);
@@ -171,7 +171,7 @@ COMMIT;
 -- Data for table `genre`
 -- -----------------------------------------------------
 START TRANSACTION;
-USE `mydb`;
+USE `movieapp`;
 INSERT INTO `genre` (`genre_name`) VALUES ('Action');
 INSERT INTO `genre` (`genre_name`) VALUES ('Comedy');
 INSERT INTO `genre` (`genre_name`) VALUES ('Horror');
@@ -185,7 +185,7 @@ COMMIT;
 -- Data for table `movie_genre`
 -- -----------------------------------------------------
 START TRANSACTION;
-USE `mydb`;
+USE `movieapp`;
 INSERT INTO `movie_genre` (`movie_id`, `genre_name`) VALUES (1, 'Thriller');
 INSERT INTO `movie_genre` (`movie_id`, `genre_name`) VALUES (2, 'Thriller');
 INSERT INTO `movie_genre` (`movie_id`, `genre_name`) VALUES (3, 'Drama');
@@ -205,7 +205,7 @@ COMMIT;
 -- Data for table `actor`
 -- -----------------------------------------------------
 START TRANSACTION;
-USE `mydb`;
+USE `movieapp`;
 INSERT INTO `actor` (`id`, `first_name`, `last_name`) VALUES (1, 'Leonardo', 'DiCaprio');
 INSERT INTO `actor` (`id`, `first_name`, `last_name`) VALUES (2, 'Tom', 'Cruise');
 INSERT INTO `actor` (`id`, `first_name`, `last_name`) VALUES (3, 'Benedict', 'Cumberbatch');
@@ -221,7 +221,7 @@ COMMIT;
 -- Data for table `acted_in`
 -- -----------------------------------------------------
 START TRANSACTION;
-USE `mydb`;
+USE `movieapp`;
 INSERT INTO `acted_in` (`movie_id`, `actor_id`) VALUES (1, 1);
 INSERT INTO `acted_in` (`movie_id`, `actor_id`) VALUES (2, 1);
 INSERT INTO `acted_in` (`movie_id`, `actor_id`) VALUES (3, 3);
@@ -241,7 +241,7 @@ COMMIT;
 -- Data for table `years`
 -- -----------------------------------------------------
 START TRANSACTION;
-USE `mydb`;
+USE `movieapp`;
 INSERT INTO `years` (`year`) VALUES (2007);
 INSERT INTO `years` (`year`) VALUES (2008);
 INSERT INTO `years` (`year`) VALUES (2009);

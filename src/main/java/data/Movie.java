@@ -21,6 +21,7 @@ public class Movie {
 		this.leadingActor = leadingActor;
 		this.moviePosterURL = moviePosterURL;
 	}
+	
 	public String getTitle() {
 		return title;
 	}

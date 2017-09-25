@@ -43,6 +43,7 @@
 	<h3>Get Movies By Year</h3>
 	<form action="MoviesByYear.do" method="GET">
 		<select name="year">
+				<option value="1989">1989</option>
 				<option value="2006">2006</option>
 				<option value="2007">2007</option>
 				<option value="2008">2008</option>

@@ -1,7 +1,5 @@
 package controllers;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -11,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
+import data.DBDAO;
 import data.Movie;
 import data.MovieDAO;
 import data.MovieDAOImpl;
@@ -25,7 +24,7 @@ public class MovieController {
 	//and sticks an object of that right in there!
 	@Autowired
 	private MovieDAO dao; 
-	public int index;
+	
 	
 	public void setDAO(MovieDAO dao) {
 		this.dao = dao;
@@ -114,14 +113,16 @@ public class MovieController {
 
 		dao.addMovie(m);
 		mv.setViewName("ActionSuccessful.jsp");
+		
 //		mv.addObject("movie", movie);
 		return mv;
 	}
 	
 	@RequestMapping(path="RemoveMovie.do", method=RequestMethod.POST)
-	public ModelAndView removeMovie(@RequestParam("title") String title) {
+	public ModelAndView removeMovie(String title) {
 		ModelAndView mv = new ModelAndView();
-		dao.removeMovie(title);
+		Movie m = dao.getMovieByTitle(title);
+		dao.removeMovie(m);
 		mv.setViewName("ActionSuccessful.jsp"); //all this says is the view name is this, return this page when we return the MaV object
 		mv.addObject("movieList", dao.getMovies());
 		//set the dao list with a new list, then return that

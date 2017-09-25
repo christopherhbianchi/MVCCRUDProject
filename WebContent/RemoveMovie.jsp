@@ -20,7 +20,7 @@
 		</select>
 		<input type="submit" value="Remove Movie"/><br>
 		</form>
-		<a href="index.jsp">Return Home</a>
+		<a href="index.do">Return Home</a>
 
 </body>
 </html>
