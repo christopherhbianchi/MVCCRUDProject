@@ -62,44 +62,44 @@ public class FirstWeekendMovieDAOImpl /*implements MovieDAO*/{
 	
 	
 	
-	@Override
-	public Movie getMovieByTitle(String title) {
-		System.out.println(title);
-		for(Movie m : movies) {
-			if (m.getTitle().equals(title)) {
-				return m;
-			}
-		}
-		return null;
-	}
-
-
-	@Override
-	public List<Movie> getMoviesByGenre(String genre){
-		List<Movie> mList = new ArrayList<>();
-		
-		for(Movie m : movies) {
-			if(m.getGenre().equals(genre)) { //we'll make it a dropdown search instead of typing out
-				mList.add(m);
-			}	
-		}
-		
-		return mList;
-	}
-
-	@Override
-	public List<Movie> getMoviesByYear(int yearReleased){
-		List<Movie> mList = new ArrayList<>();
-		
-		for(Movie m : movies) {
-			if(m.getYearReleased() == yearReleased) { //we'll make it a dropdown search instead of typing out
-				mList.add(m);
-			}	
-		}
-		
-		return mList;
-	}
-	
+//	@Override
+//	public Movie getMovieByTitle(String title) {
+//		System.out.println(title);
+//		for(Movie m : movies) {
+//			if (m.getTitle().equals(title)) {
+//				return m;
+//			}
+//		}
+//		return null;
+//	}
+//
+//
+//	@Override
+//	public List<Movie> getMoviesByGenre(String genre){
+//		List<Movie> mList = new ArrayList<>();
+//		
+//		for(Movie m : movies) {
+//			if(m.getGenre().equals(genre)) { //we'll make it a dropdown search instead of typing out
+//				mList.add(m);
+//			}	
+//		}
+//		
+//		return mList;
+//	}
+//
+//	@Override
+//	public List<Movie> getMoviesByYear(int yearReleased){
+//		List<Movie> mList = new ArrayList<>();
+//		
+//		for(Movie m : movies) {
+//			if(m.getYearReleased() == yearReleased) { //we'll make it a dropdown search instead of typing out
+//				mList.add(m);
+//			}	
+//		}
+//		
+//		return mList;
+//	}
+//	
 	
 	public Movie forwardMovie (Movie m) { //so they can scroll through a list of 10 movies.
 		
@@ -129,44 +129,44 @@ public class FirstWeekendMovieDAOImpl /*implements MovieDAO*/{
 		}
 	}
 	
-
-	@Override
-	public void addMovie(String title, String genre, int yearReleased, String leadingActor, String moviePosterURL) {
-		Movie movie = new Movie(title, genre, yearReleased, leadingActor, moviePosterURL);
-		
-		
-		movies.add(movie); //go back to add functionality to check to see it isn't duplicate, been done above now
-	}
-
-	public void addMovie(Movie m) {
-		movies.add(m); //go back to add functionality to check to see it isn't duplicate, been done above now
-	}
-	
-
-	@Override
-	public void removeMovie(String title) { //will have a drop down that won't let them free type it
-		movies.remove(getMovieByTitle(title)); //updated
-	}
-
-
-
-
-
-	@Override
-	public void updateMovie(String title, String genre, int yearReleased, String leadingActor, String moviePosterURL) {
-		
-		
-		for(int i=0; i< movies.size(); i++) {
-			if(movies.get(i).getTitle().equals(title)) { 
-				
-				movies.get(i).setGenre(genre);
-				movies.get(i).setYearReleased(yearReleased);
-				movies.get(i).setLeadingActor(leadingActor);	
-				movies.get(i).setMoviePosterURL(moviePosterURL);
-			}
-		}
-	}
-	
+//
+//	@Override
+//	public void addMovie(String title, String genre, int yearReleased, String leadingActor, String moviePosterURL) {
+//		Movie movie = new Movie(title, genre, yearReleased, leadingActor, moviePosterURL);
+//		
+//		
+//		movies.add(movie); //go back to add functionality to check to see it isn't duplicate, been done above now
+//	}
+//
+//	public void addMovie(Movie m) {
+//		movies.add(m); //go back to add functionality to check to see it isn't duplicate, been done above now
+//	}
+//	
+//
+//	@Override
+//	public void removeMovie(String title) { //will have a drop down that won't let them free type it
+//		movies.remove(getMovieByTitle(title)); //updated
+//	}
+//
+//
+//
+//
+//
+//	@Override
+//	public void updateMovie(String title, String genre, int yearReleased, String leadingActor, String moviePosterURL) {
+//		
+//		
+//		for(int i=0; i< movies.size(); i++) {
+//			if(movies.get(i).getTitle().equals(title)) { 
+//				
+//				movies.get(i).setGenre(genre);
+//				movies.get(i).setYearReleased(yearReleased);
+//				movies.get(i).setLeadingActor(leadingActor);	
+//				movies.get(i).setMoviePosterURL(moviePosterURL);
+//			}
+//		}
+//	}
+//	
 public List<Movie> getMovies() {
 	return movies;
 	}

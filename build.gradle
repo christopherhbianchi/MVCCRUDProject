@@ -13,6 +13,9 @@ sourceSets {
   }
 }
 
+sourceCompatibility = '1.8'
+targetCompatibility = '1.7'
+
 war {
   archiveName = "${baseName}.war"
   destinationDir = file("./")      // Project root
